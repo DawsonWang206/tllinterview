@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dawson.mapper.IP_LocationMapper">
+
+	<!-- 仅演示， 其他方法略 -->
+	<select id="searchRequestLocationByIP" 
+		resultType="string">		
+		select region_name from ip_location where regexp_like(ip_start, #{requestIp}) and 
+		regexp_like(ip_end, #{requestIp})
+		
+	</select>
+	
+</mapper>
